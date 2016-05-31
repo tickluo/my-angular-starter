@@ -1,0 +1,32 @@
+
+<div>
+    <account></account>
+    <p>welcome for everyone</p>
+        <show for-name="{{Name}}"></show>
+    <div ng-controller="DemoCtrl as demo" layout="column" ng-cloak>
+        <md-content class="md-padding" layout="column">
+            <p>
+                You may supply a direction of <code>left</code>, <code>up</code>, <code>down</code>, or
+                <code>right</code> through the <code>md-direction</code> attribute.
+            </p>
+            <div class="lock-size" layout="row" layout-align="center center">
+                <md-fab-speed-dial md-open="demo.isOpen" md-direction="{{demo.selectedDirection}}"
+                                   ng-class="demo.selectedMode">
+                    <md-fab-trigger>
+                        <md-button aria-label="menu" class="md-fab md-warn">
+                            <md-icon md-svg-src="asset/svg/menu.svg"></md-icon>
+                        </md-button>
+                    </md-fab-trigger>
+                    <md-fab-actions>
+                        <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                            <md-icon md-svg-src="asset/svg/twitter.svg" aria-label="Twitter"></md-icon>
+                        </md-button>
+                        <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                            <md-icon md-svg-src="asset/svg/google_plus.svg" aria-label="Facebook"></md-icon>
+                        </md-button>
+                    </md-fab-actions>
+                </md-fab-speed-dial>
+            </div>
+        </md-content>
+    </div>
+</div>
