@@ -7,6 +7,6 @@ app.appModule
     .controller('DemoCtrl', ['$log',function($log) {
         this.isOpen = false;
         this.selectedMode = 'md-fling';
-        this.selectedDirection = 'up';
+        this.selectedDirection = 'down';
     }]);
 

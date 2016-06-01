@@ -1,11 +1,11 @@
 app.componentModule
     .component('account', {
         templateUrl: 'component/shared/accountContainer.tpl.html',
-        controller:function accountManager(){
-            this.user = {
-                name:'Jin',
-                avatar:'asset/svg/twitter.svg'
-            }
+        controller:function accountManager(authService){
+            //TODO
+            authService.then(function(res){
+                this.user = res.data;
+            });
         },
         controllerAs:'ctrl'
     });

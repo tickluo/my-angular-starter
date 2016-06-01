@@ -1,0 +1,10 @@
+.nav-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.fab-position {
+    position: relative;
+    top:40px
+}

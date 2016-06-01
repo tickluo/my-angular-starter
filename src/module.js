@@ -1,6 +1,6 @@
 var app = {};
 app.directiveModule = angular.module('myApp.directive', ['myApp.service']);
-app.componentModule =angular.module('myApp.component',[]);
+app.componentModule =angular.module('myApp.component',['myApp.service']);
 app.serviceModule = angular.module('myApp.service', []);
 app.constModule = angular.module('myApp.const', []);
 

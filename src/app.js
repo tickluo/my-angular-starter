@@ -5,20 +5,27 @@ app.appModule.config([
     '$stateProvider',
     '$urlRouterProvider',
     '$logProvider',
+    '$mdThemingProvider',
     'appConst',
-    function ($locationProvider, $stateProvider, $urlRouterProvider, $logProvider, appConst) {
+    function ($locationProvider, $stateProvider, $urlRouterProvider, $logProvider, $mdThemingProvider, appConst) {
         $logProvider.debugEnabled(appConst.debug);
         $locationProvider.hashPrefix('!');
+        $mdThemingProvider.theme('default').primaryPalette('grey', {
+            'default': '500',
+            'hue-1': '200',
+            'hue-2': '600',
+            'hue-3': '800'
+        });
         $stateProvider
-            .state('error',{
+            .state('error', {
                 url: '/error',
                 templateUrl: 'app/error/layout.html'
             })
-            .state('error.authError',{
+            .state('error.authError', {
                 url: '/authError?redirect_state_name',
                 templateUrl: 'app/error/authError.page.html'
             });
-        
+
         $stateProvider
             .state('all', {
                 url: '/all',
@@ -36,7 +43,7 @@ app.appModule.config([
                 url: '/auth',
                 templateUrl: 'app/auth/layout.html',
                 resolve: {
-                    authorities: ['$q','stateConst', function ($q,stateConst) {
+                    authorities: ['$q', 'stateConst', function ($q, stateConst) {
                         return $q.reject(stateConst.AUTH_REJECT);
                     }]
                 }
@@ -49,15 +56,15 @@ app.appModule.config([
                 url: '/view2',
                 templateUrl: 'app/auth/view2/view2.html'
             });
-        
+
         $urlRouterProvider.otherwise('/all/login')
     }])
 
     .run(['$rootScope', 'stateConst', '$state', function ($rootScope, stateConst, $state) {
         $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
             if (error === stateConst.AUTH_REJECT) {
-                $state.go('error.authError',{
-                    redirect_state_name:fromState.name
+                $state.go('error.authError', {
+                    redirect_state_name: fromState.name
                 });
             }
         })
