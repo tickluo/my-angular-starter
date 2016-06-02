@@ -1,10 +1,10 @@
-.nav-layout {
-    display: flex;
-    justify-content: space-between;
-    align-items: center
-}
 
 .fab-position {
     position: relative;
     top:40px
+}
+
+.avatar-init{
+    width: 40px;
+    height: 50px;
 }

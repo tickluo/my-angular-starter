@@ -5,9 +5,7 @@
 app.serviceModule.factory('sidebarService', [
     '$http',
     '$q',
-    '$timeout',
-    'authService',
-    function ($http, $q, $timeout, auth) {
+    function ($http, $q) {
         var menus = [
             {name:'ADMIN',icon:''},
             {name:'VISITOR',icon:''}

@@ -4,9 +4,18 @@
 
 app.appModule
 
-    .controller('DemoCtrl', ['$log',function($log) {
+    .controller('DemoCtrl', [function () {
         this.isOpen = false;
         this.selectedMode = 'md-fling';
         this.selectedDirection = 'down';
-    }]);
+    }])
+
+    .controller('globalCtrl', [
+        'authService',
+        '$log',
+        function (authService, $log) {
+            //TODO: change this location to a global scene
+            $log.debug('-----auth-----');
+            authService.authorize('jin', '123');
+        }]);
 

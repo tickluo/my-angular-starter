@@ -1,4 +1,4 @@
-<div style="width: 10%">
+<!--<div style="width: 10%">
     <md-card>
         <md-card-title>
             <md-card-title-media>
@@ -11,5 +11,15 @@
             </md-card-title-text>
         </md-card-title>
     </md-card>
+</div>-->
+
+<div class="user-layout " layout="row" layout-margin layout-align="center center">
+    <div flex="grow">
+        <md-icon md-svg-src="{{::ctrl.user.avatar}}" class="avatar-init"></md-icon>
+    </div>
+    <div flex="grow" layout="column">
+        <i class="md-subhead" style="color: yellow">{{::ctrl.user.role}}</i>
+        <span class="md-title">{{::ctrl.user.userName}}</span>
+    </div>
 </div>
 

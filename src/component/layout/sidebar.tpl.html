@@ -1,7 +1,7 @@
 <!--<md-sidenav  md-is-locked-open="$mdMedia('gt-sm')" md-component-id="primaryLeft" class="md-whiteframe-4dp md-sidenav-left">-->
 <md-sidenav style="background-color: #424242"  md-component-id="sidebarLeft" class="md-whiteframe-4dp md-sidenav-left" >
         <md-toolbar class="md-whiteframe-z2 md-hue-2" layout-align="center center">
-            Welcome.{{ctrl.userName}}
+            {{ctrl.user.role}}.{{ctrl.user.userName}}
         </md-toolbar>
         <md-button layout="row" layout-align="center center" class="md-toolbar-tools nav-item"
                    ui-sref="all.login">
