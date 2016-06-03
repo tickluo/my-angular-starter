@@ -4,6 +4,14 @@ app.componentModule.component('navbar', {
     controllerAs: 'ctrl'
 });
 
+app.appModule
+    .controller('DemoCtrl', [function () {
+        this.isOpen = false;
+        this.selectedMode = 'md-fling';
+        this.selectedDirection = 'down';
+    }]);
+
+
 function navCtrl($mdSidenav) {
     var context = this;
 

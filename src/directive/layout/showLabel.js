@@ -11,6 +11,6 @@ app.directiveModule.directive('show', function () {
         }
     }
 })
-    .controller('showCtrl', ['$scope',function ($scope) {
+    .controller('showCtrl', ['$scope', function ($scope) {
         $scope.Name = 'Jin';
     }]);

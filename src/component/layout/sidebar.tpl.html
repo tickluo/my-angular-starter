@@ -4,17 +4,17 @@
             {{ctrl.user.role}}.{{ctrl.user.userName}}
         </md-toolbar>
         <md-button layout="row" layout-align="center center" class="md-toolbar-tools nav-item"
-                   ui-sref="all.login">
+                   ui-sref="login">
             <h1>HOME</h1>
         </md-button>
         <md-divider ng-if="!$last"></md-divider>
         <md-button layout="row" layout-align="center center" class="md-toolbar-tools nav-item"
-                   ui-sref="auth.view1">
+                   ui-sref="layout.auth.view1">
             <h1>VIEW1</h1>
         </md-button>
         <md-divider ng-if="!$last"></md-divider>
         <md-button layout="row" layout-align="center center" class="md-toolbar-tools nav-item"
-                   ui-sref="auth.view2">
+                   ui-sref="layout.auth.view2">
             <h1>VIEW2</h1>
         </md-button>
     <md-button ng-repeat-start="item in ctrl.menuItems" layout="row" layout-align="center center"

@@ -29,29 +29,35 @@
     padding: 0;
 }
 
-.fabSpeedDialdemoBasicUsage .text-capitalize {
-    text-transform: capitalize;
-}
-
-.fabSpeedDialdemoBasicUsage .md-fab:hover, .fabSpeedDialdemoBasicUsage .md-fab.md-focused {
-    background-color: #000 !important;
-}
-
-.fabSpeedDialdemoBasicUsage p.note {
-    font-size: 1.2rem;
-}
-
-.fabSpeedDialdemoBasicUsage .lock-size {
-    min-width: 300px;
-    min-height: 300px;
-    width: 300px;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .nav-layout {
     display: flex;
     justify-content: space-between;
     align-items: center
+}
+
+/*here to page slide animate*/
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.slide.ng-enter,
+.slide.ng-leave {
+    transition: all 1s ease;
+}
+.slide.ng-enter {
+    transform: translate(100%, 0);
+}
+.slide.ng-enter-active {
+    transform: translate(0, 0);
+}
+.slide.ng-leave {
+    transform: translate(0, 0);
+}
+.slide.ng-leave-active {
+    transform: translate(-100%, 0);
 }

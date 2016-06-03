@@ -3,19 +3,23 @@
  */
 
 app.appModule
-
-    .controller('DemoCtrl', [function () {
-        this.isOpen = false;
-        this.selectedMode = 'md-fling';
-        this.selectedDirection = 'down';
-    }])
-
-    .controller('globalCtrl', [
-        'authService',
-        '$log',
-        function (authService, $log) {
-            //TODO: change this location to a global scene
-            $log.debug('-----auth-----');
-            authService.authorize('jin', '123');
+    .controller('loginCtrl', [
+        '$timeout',
+        '$state',
+        '$scope',
+        function ($timeout,$state,$scope) {
+            this.submitLogin = angular.bind(this,startLoginAnimate,$timeout,$state,$scope);
         }]);
+
+
+function startLoginAnimate($timeout,$state) {
+    var context = this;
+    context.startFade = true;
+    context.startLogin = true;
+
+    $timeout(function () {
+        context.hideLoginForm = true;
+        $state.go('layout.auth.view1');
+    }, 2000);
+}
 

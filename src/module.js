@@ -11,6 +11,7 @@ app.appModule = angular.module('myApp', [
     'ui.router',
     'myApp.version',
     'myApp.const',
-    'ngMaterial'
+    'ngMaterial',
+    'ngAnimate'
 ]);
 

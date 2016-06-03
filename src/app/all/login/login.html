@@ -1,5 +1,24 @@
+<div ng-controller="loginCtrl as ctrl" ng-class="{start_loading:ctrl.startLogin}" class="wrapper">
+    <div class="container">
+        <h1>Welcome to GMTool</h1>
 
-<div>
-    <p>welcome for everyone</p>
-        <show for-name="{{Name}}"></show>
+        <form ng-hide="ctrl.hideLoginForm"  ng-class="{fade:ctrl.startFade}" >
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <button type="submit" ng-click="ctrl.submitLogin()">Login</button>
+        </form>
+    </div>
+
+    <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
 </div>
